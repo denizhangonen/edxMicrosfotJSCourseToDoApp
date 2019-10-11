@@ -5,10 +5,10 @@ var taskList = document.getElementById("taskList");
 var clearButton = document.getElementById("clear");
 
 // add new item to task list
-addButton.addEventListener("click", function() {
+addButton.addEventListener("click", function(){
   var task = taskInput.value;
   // Don't add empty string
-  if (task.trim()) {
+  if(task.trim()){
     // add new task list item
     var newItem = document.createElement("LI");
     var taskText = document.createTextNode(task);
@@ -22,19 +22,20 @@ addButton.addEventListener("click", function() {
     removeButton.addEventListener("click", removeTask);
     newItem.appendChild(removeButton);
     taskList.appendChild(newItem);
-  } else {
+  }
+  else{
     alert("Task cannot be empty");
   }
 });
 
 // clear entire list
-clearButton.addEventListener("click", function() {
+clearButton.addEventListener("click", function(){
   taskList.innerHTML = "";
 });
 
 // remove a task from the list
-function removeTask(e) {
+function removeTask(e){
   // get the parent list item to remove
   var taskItem = e.target.parentElement;
-  taskList.removeChild(taskItem);
+  taskList.removeChild(taskItem); 
 }
